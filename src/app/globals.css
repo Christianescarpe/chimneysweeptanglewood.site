@@ -1,0 +1,582 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 15, 23, 42;
+  --background-rgb: 255, 255, 255;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(217, 119, 6, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(217, 119, 6, 0.8);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
+
+/* Content Link Styling: Guarantees ALL anchors with links are distinctly visible in copy */
+.prose-content a:not(.btn):not(.location-link),
+.homepage-sheet a:not(.btn):not(.location-link),
+.article-content a {
+  color: #d97706;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.prose-content a:not(.btn):not(.location-link):hover,
+.homepage-sheet a:not(.btn):not(.location-link):hover,
+.article-content a:hover {
+  color: #b45309;
+  text-decoration-thickness: 2.5px;
+}
+
+/* Base Prose Content Styling for Content from Sheet */
+.prose-content {
+  color: #334155;
+  line-height: 1.85;
+  font-size: 1.05rem;
+}
+
+.prose-content h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #0b1528;
+  margin-top: 1.5rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.25;
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.prose-content h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0b1528;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 0.5rem;
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.prose-content h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.prose-content p {
+  margin-bottom: 1.25rem;
+}
+
+.prose-content ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.prose-content ol {
+  list-style-type: decimal;
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.prose-content li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.25rem;
+}
+
+.prose-content strong {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+/* Homepage HTML Sections from Sheet styled to match Design Template */
+.homepage-sheet {
+  width: 100%;
+}
+
+.homepage-sheet .hero {
+  background: linear-gradient(180deg, #070d18 0%, #0b1528 50%, #070d18 100%);
+  color: #ffffff;
+  padding: 4.5rem 1.5rem 5.5rem;
+  border-bottom: 1px solid #1e293b;
+  text-align: center;
+}
+
+.homepage-sheet .hero h1 {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #ffffff;
+  max-width: 55rem;
+  margin: 0 auto 1.5rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.homepage-sheet .hero p {
+  color: #cbd5e1;
+  font-size: 1.15rem;
+  max-width: 48rem;
+  margin: 0 auto 2rem;
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+.homepage-sheet .services {
+  background: #f8fafc;
+  padding: 5rem 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.homepage-sheet .services h2 {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  text-align: center;
+  color: #0b1528;
+  margin-bottom: 1rem;
+}
+
+.homepage-sheet .services > p {
+  text-align: center;
+  max-width: 45rem;
+  margin: 0 auto 3.5rem;
+  color: #475569;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.homepage-sheet .service-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.homepage-sheet .service-cards .card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 2.25rem 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.homepage-sheet .service-cards .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
+  border-color: #f59e0b;
+}
+
+.homepage-sheet .service-cards .card h3 {
+  font-family: Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0b1528;
+  margin-bottom: 0.75rem;
+}
+
+.homepage-sheet .service-cards .card p {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.homepage-sheet .why-us {
+  background: #0b1528;
+  color: #ffffff;
+  padding: 5rem 1.5rem;
+  border-bottom: 1px solid #1e293b;
+}
+
+.homepage-sheet .why-us h2 {
+  font-family: Georgia, serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.homepage-sheet .why-us > p {
+  text-align: center;
+  max-width: 45rem;
+  margin: 0 auto 3rem;
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.homepage-sheet .why-us ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 75rem;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+}
+
+.homepage-sheet .why-us li {
+  background: rgba(15, 28, 52, 0.85);
+  border: 1px solid #1e3a5f;
+  border-radius: 1rem;
+  padding: 2rem 1.75rem;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  transition: all 0.25s ease;
+}
+
+.homepage-sheet .why-us li:hover {
+  border-color: #d97706;
+  background: #0f1c34;
+}
+
+.homepage-sheet .why-us li strong {
+  display: block;
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-family: Georgia, serif;
+  margin-bottom: 0.5rem;
+}
+
+.homepage-sheet .process {
+  background: #ffffff;
+  padding: 5rem 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.homepage-sheet .process h2 {
+  font-family: Georgia, serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  text-align: center;
+  color: #0b1528;
+  margin-bottom: 1rem;
+}
+
+.homepage-sheet .process > p {
+  text-align: center;
+  max-width: 45rem;
+  margin: 0 auto 3.5rem;
+  color: #475569;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.homepage-sheet .process ol {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  max-width: 75rem;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+  counter-reset: process-counter;
+}
+
+.homepage-sheet .process ol li {
+  position: relative;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 2.25rem 1.75rem 1.75rem;
+  counter-increment: process-counter;
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.65;
+}
+
+.homepage-sheet .process ol li::before {
+  content: "Step " counter(process-counter);
+  display: inline-block;
+  background: #d97706;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 0.75rem;
+}
+
+.homepage-sheet .process ol li strong {
+  display: block;
+  color: #0b1528;
+  font-size: 1.15rem;
+  font-family: Georgia, serif;
+  margin-bottom: 0.5rem;
+}
+
+.homepage-sheet .problems {
+  background: #f8fafc;
+  padding: 5rem 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.homepage-sheet .problems h2 {
+  font-family: Georgia, serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  text-align: center;
+  color: #0b1528;
+  margin-bottom: 1rem;
+}
+
+.homepage-sheet .problems > p {
+  text-align: center;
+  max-width: 45rem;
+  margin: 0 auto 3rem;
+  color: #475569;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.homepage-sheet .problems h3 {
+  font-family: Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0b1528;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.homepage-sheet .problems p {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.homepage-sheet .schedule {
+  background: #ffffff;
+  padding: 5rem 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.homepage-sheet .schedule h2 {
+  font-family: Georgia, serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #0b1528;
+  margin-bottom: 1.25rem;
+}
+
+.homepage-sheet .schedule p {
+  color: #475569;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.homepage-sheet .areas {
+  background: #f8fafc;
+  padding: 5rem 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: center;
+}
+
+.homepage-sheet .areas h2 {
+  font-family: Georgia, serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #0b1528;
+  margin-bottom: 1.25rem;
+}
+
+.homepage-sheet .areas p {
+  color: #475569;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 55rem;
+  margin: 0 auto 1.5rem;
+}
+
+.homepage-sheet .location-link,
+.location-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  color: #0b1528;
+  font-weight: 600;
+  text-decoration: none !important;
+  margin: 0.35rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.homepage-sheet .location-link:hover,
+.location-link:hover {
+  border-color: #d97706;
+  color: #d97706;
+  background: #fffbeb;
+  transform: translateY(-1px);
+}
+
+.homepage-sheet .faq {
+  background: #ffffff;
+  padding: 5rem 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.homepage-sheet .faq h2 {
+  font-family: Georgia, serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #0b1528;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.homepage-sheet .faq h3 {
+  font-family: Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0b1528;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.homepage-sheet .faq p {
+  color: #475569;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+
+.homepage-sheet .cta {
+  background: #070d18;
+  color: #ffffff;
+  padding: 5.5rem 1.5rem;
+  text-align: center;
+}
+
+.homepage-sheet .cta h2 {
+  font-family: Georgia, serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+}
+
+.homepage-sheet .cta p {
+  color: #cbd5e1;
+  max-width: 45rem;
+  margin: 0 auto 2.5rem;
+  font-size: 1.15rem;
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+/* Button Styles from Sheet */
+.homepage-sheet .btn,
+.prose-content .btn,
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #d97706;
+  color: #ffffff !important;
+  padding: 0.85rem 1.75rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none !important;
+  margin-right: 0.75rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.35);
+  transition: all 0.2s ease;
+}
+
+.homepage-sheet .btn:hover,
+.prose-content .btn:hover,
+.btn-primary:hover {
+  background: #b45309;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(217, 119, 6, 0.5);
+}
+
+.homepage-sheet .btn-secondary,
+.prose-content .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: 2px solid #d97706;
+  color: #ffffff !important;
+  padding: 0.8rem 1.65rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none !important;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.homepage-sheet .btn-secondary:hover,
+.prose-content .btn-secondary:hover {
+  background: #d97706;
+  color: #ffffff !important;
+}
+
+/* Local focus & blog post styling */
+.local-focus,
+.blog-post {
+  padding: 1rem 0;
+}
