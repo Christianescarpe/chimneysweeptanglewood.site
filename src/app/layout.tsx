@@ -11,17 +11,20 @@ export const metadata: Metadata = {
     template: `%s | ${siteData.business.name}`
   },
   description: siteData.homepage.metaDescription,
-  metadataBase: new URL('https://chimneysweeptanglewood.site'),
+  metadataBase: new URL('https://www.chimneysweeptanglewood.site'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: siteData.homepage.seoTitle,
     description: siteData.homepage.metaDescription,
-    url: 'https://chimneysweeptanglewood.site',
+    url: 'https://www.chimneysweeptanglewood.site',
     siteName: siteData.business.name,
     locale: 'en_US',
     type: 'website',
+  },
+  verification: {
+    google: 'bgTXj6oT53WwNahdRMw8RImKd1y0IT_Rrjnu-VrjkhY',
   },
   robots: {
     index: true,
@@ -36,6 +39,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <meta name="google-site-verification" content="bgTXj6oT53WwNahdRMw8RImKd1y0IT_Rrjnu-VrjkhY" />
+      </head>
       <body className="min-h-screen flex flex-col bg-white text-slate-800 antialiased selection:bg-amber-500 selection:text-white">
         <Navbar />
         <main className="flex-1">
