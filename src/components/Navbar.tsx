@@ -149,6 +149,14 @@ export default function Navbar() {
               >
                 Blog & Guides
               </Link>
+
+              {/* Contact link */}
+              <Link
+                href="/contact"
+                className="px-3 py-2 text-sm font-semibold text-slate-200 hover:text-amber-400 transition-colors"
+              >
+                Contact
+              </Link>
             </div>
 
             {/* Desktop CTA Phone Button */}
@@ -257,6 +265,14 @@ export default function Navbar() {
               className="block px-3 py-2 rounded-md text-base font-semibold text-white hover:bg-navy-800 hover:text-amber-400"
             >
               Blog & Fireplace Guides
+            </Link>
+
+            <Link
+              href="/contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-3 py-2 rounded-md text-base font-semibold text-white hover:bg-navy-800 hover:text-amber-400"
+            >
+              Contact Us
             </Link>
 
             {/* Mobile Call CTA */}

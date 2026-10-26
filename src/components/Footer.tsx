@@ -190,6 +190,7 @@ export default function Footer() {
             <Link href="/services" className="hover:text-amber-400 transition-colors">Services</Link>
             <Link href="/locations" className="hover:text-amber-400 transition-colors">Locations</Link>
             <Link href="/blog" className="hover:text-amber-400 transition-colors">Blog</Link>
+            <Link href="/contact" className="hover:text-amber-400 transition-colors">Contact</Link>
             <a href={`tel:${business.phoneRaw}`} className="text-amber-400 font-semibold hover:underline">
               {business.phone}
             </a>
