@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Phone, Flame, Menu, X, ChevronDown, MapPin, Clock } from 'lucide-react';
 import { siteData } from '@/lib/data';
 
@@ -45,17 +46,16 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center shadow-md shadow-amber-900/30 group-hover:scale-105 transition-transform">
-                <Flame className="w-7 h-7 text-white" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-xl sm:text-2xl font-black tracking-wider text-white uppercase font-serif">
-                  EMBERCREST
-                </span>
-                <span className="text-[10px] sm:text-xs font-semibold tracking-widest text-amber-400 uppercase -mt-1">
-                  CHIMNEY SWEEP • TANGLEWOOD
-                </span>
+            <Link href="/" className="flex items-center group py-1.5" aria-label="Embercrest Chimney Sweep Tanglewood Home">
+              <div className="relative h-14 sm:h-16 w-36 sm:w-44">
+                <Image
+                  src="/images/logo.webp"
+                  alt="Embercrest Chimney Sweep Tanglewood"
+                  fill
+                  priority
+                  sizes="(max-width: 640px) 144px, 176px"
+                  className="object-contain object-left group-hover:scale-105 transition-transform"
+                />
               </div>
             </Link>
 

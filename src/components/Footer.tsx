@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Phone, MapPin, Flame, ArrowUpRight, ShieldCheck } from 'lucide-react';
 import { siteData } from '@/lib/data';
 
@@ -12,17 +13,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Column 1: Company Profile */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-amber-500 flex items-center justify-center text-white shadow-md">
-                <Flame className="w-6 h-6" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-lg font-bold tracking-wider text-white uppercase font-serif">
-                  EMBERCREST
-                </span>
-                <span className="text-[10px] font-semibold tracking-widest text-amber-400 uppercase -mt-0.5">
-                  CHIMNEY SWEEP • TANGLEWOOD
-                </span>
+            <Link href="/" className="inline-block group" aria-label="Embercrest Chimney Sweep Tanglewood Home">
+              <div className="relative h-16 sm:h-20 w-44 sm:w-52">
+                <Image
+                  src="/images/logo.webp"
+                  alt="Embercrest Chimney Sweep Tanglewood"
+                  fill
+                  sizes="(max-width: 640px) 176px, 208px"
+                  className="object-contain object-left group-hover:scale-105 transition-transform"
+                />
               </div>
             </Link>
 

@@ -20,6 +20,10 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
+  icons: {
+    icon: '/icon.png',
+    apple: '/icon.png',
+  },
   verification: {
     google: 'bgTXj6oT53WwNahdRMw8RImKd1y0IT_Rrjnu-VrjkhY',
   },
