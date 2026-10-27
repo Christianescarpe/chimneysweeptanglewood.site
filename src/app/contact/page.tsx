@@ -14,13 +14,13 @@ import { siteData } from '@/lib/data';
 import HeroBackgroundSlides from '@/components/HeroBackgroundSlides';
 
 export const metadata: Metadata = {
-  title: 'Contact Embercrest Chimney Sweep Tanglewood | Phone, Address & Map',
+  title: 'Contact Embercrest Chimney Sweep Tanglewood',
   description: 'Contact Embercrest Chimney Sweep in Tanglewood, Fort Worth, TX. Call (682) 350-5722 for chimney cleaning, inspection, and repair. 2925 Riverglen Dr with map and directions.',
   alternates: {
     canonical: '/contact/',
   },
   openGraph: {
-    title: 'Contact Embercrest Chimney Sweep Tanglewood | Fort Worth, TX',
+    title: 'Contact Embercrest Chimney Sweep Tanglewood',
     description: 'Call (682) 350-5722 for chimney sweeping, inspection, and repair in Fort Worth. Located at 2925 Riverglen Dr, Fort Worth, TX 76109.',
     url: 'https://chimneysweeptanglewood.site/contact/',
   }

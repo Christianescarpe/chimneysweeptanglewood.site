@@ -6,7 +6,7 @@ import { siteData } from '@/lib/data';
 import HeroBackgroundSlides from '@/components/HeroBackgroundSlides';
 
 export const metadata: Metadata = {
-  title: 'Our Chimney & Fireplace Services | Embercrest Chimney Sweep Tanglewood',
+  title: 'Our Chimney & Fireplace Services',
   description: 'Explore all professional chimney services in Fort Worth, TX. Cleaning, inspections, masonry repair, cap installation, crown repair, leak fixes, and dryer vent care.',
   alternates: {
     canonical: '/services',

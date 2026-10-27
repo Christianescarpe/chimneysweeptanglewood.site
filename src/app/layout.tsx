@@ -6,10 +6,7 @@ import FloatingCallButton from '@/components/FloatingCallButton';
 import { siteData } from '@/lib/data';
 
 export const metadata: Metadata = {
-  title: {
-    default: siteData.homepage.seoTitle,
-    template: `%s | ${siteData.business.name}`
-  },
+  title: siteData.homepage.seoTitle,
   description: siteData.homepage.metaDescription,
   metadataBase: new URL('https://www.chimneysweeptanglewood.site'),
   alternates: {

@@ -109,6 +109,12 @@ function cleanAndPreserveHtml(row) {
   return html.trim();
 }
 
+function cleanSeoTitle(rawTitle) {
+  if (!rawTitle) return '';
+  // Remove the second part after the pipe (e.g. " | Embercrest")
+  return rawTitle.split(/\s*\|\s*/)[0].trim();
+}
+
 function mapRow(row, defaultType, imgIndex) {
   const internalLinks = [];
   if (row[8] && row[9]) internalLinks.push({ anchor: row[8], link: row[9] });
@@ -122,7 +128,7 @@ function mapRow(row, defaultType, imgIndex) {
     id: row[0],
     type: row[1] || defaultType,
     title: row[2],
-    seoTitle: row[3],
+    seoTitle: cleanSeoTitle(row[3]),
     metaDescription: row[5],
     slug: row[7],
     internalLinks,

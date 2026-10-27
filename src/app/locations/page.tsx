@@ -6,7 +6,7 @@ import { siteData } from '@/lib/data';
 import HeroBackgroundSlides from '@/components/HeroBackgroundSlides';
 
 export const metadata: Metadata = {
-  title: 'Chimney Sweep Service Areas | Embercrest Chimney Sweep Tanglewood',
+  title: 'Chimney Sweep Service Areas in Fort Worth, TX',
   description: 'Chimney sweep and repair service areas across Tanglewood, Overton Park, Colonial, Westover Hills, Benbrook, and Fort Worth, TX.',
   alternates: {
     canonical: '/locations',

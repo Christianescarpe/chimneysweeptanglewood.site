@@ -6,7 +6,7 @@ import { siteData } from '@/lib/data';
 import HeroBackgroundSlides from '@/components/HeroBackgroundSlides';
 
 export const metadata: Metadata = {
-  title: 'Fireplace & Chimney Safety Guides | Embercrest Chimney Sweep Tanglewood',
+  title: 'Fireplace & Chimney Safety Guides',
   description: 'Expert guides, chimney maintenance tips, creosote prevention, and seasonal fire care from Embercrest Chimney Sweep Tanglewood in Fort Worth, TX.',
   alternates: {
     canonical: '/blog',
